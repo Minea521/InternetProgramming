@@ -18,6 +18,7 @@
 import { defineProps } from 'vue';
 
 defineProps<{
+  id: number
   image: string
   name: string
   quantity: string
