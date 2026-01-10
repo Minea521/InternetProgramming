@@ -43,6 +43,21 @@ class User extends Authenticatable
             ->whereHas('permissions', fn($q) => $q->where('name', $permission))
             ->exists();
     }
+
+    public function author()
+    {
+        return $this->hasOne(Author::class);
+    }
+
+    public function audience()
+    {
+        return $this->hasOne(Audience::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
     /**
      * The attributes that should be hidden for serialization.
      *
